@@ -1,0 +1,47 @@
+version: "3.5"
+
+services:
+  micro-frontend-program-page:
+    container_name: micro-frontend-program-page
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    networks:
+      - local-network
+    volumes:
+      - '.:/app'
+    environment:
+      - PORT=3000
+    tty: true
+
+  micro-frontend-store-page:
+    container_name: micro-frontend-store-page
+    build:
+      context: '.'
+      dockerfile: Dockerfile-store
+    networks:
+      - local-network
+    volumes:
+      - '.:/app'
+    environment:
+      - PORT=3000
+    tty: true
+
+  micro-frontend-nginx:
+    container_name: micro-frontend-nginx
+    build: nginx
+    ports:
+      - "8888:80"
+    networks:
+      - local-network
+    ports:
+      - "8888:80"
+    links:
+      - micro-frontend-program-page
+      - micro-frontend-store-page
+    depends_on:
+      - micro-frontend-program-page
+      - micro-frontend-store-page
+
+networks:
+  local-network:

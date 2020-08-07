@@ -1,0 +1,12 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Header from '@mmts/header';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Header />
+    program
+  </React.StrictMode>,
+  document.getElementById('root')
+);

@@ -1,0 +1,42 @@
+{
+  "name": "@mmts/cra2",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://localhost:8888/store",
+  "dependencies": {
+    "@mmts/header": "*",
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "eslint-config-react-app": "^5.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "typescript": "~3.9.5"
+  },
+  "scripts": {
+    "start": "PORT=3000 BROWSER=none SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "lint": "yarn lint:types && yarn lint:eslint && yarn lint:format",
+    "lint:eslint": "eslint ./src --ext .ts,.tsx",
+    "lint:format": "prettier-check '{*.{js,json,md},src/**/*.{ts,tsx}}'",
+    "lint:types": "tsc -p tsconfig.json",
+    "test": "true",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

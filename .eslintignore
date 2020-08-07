@@ -1,0 +1,13 @@
+# don't ever lint node_modules
+node_modules
+# don't lint shared config
+husky.config.js
+lint-staged.config.js
+prettier.config.js
+packages/tsconfig*
+packages/jest.config.js
+packages/*/jest.config.js
+# don't lint build output (make sure it's set to your correct build folder name)
+packages/*/build
+# don't lint nyc coverage output
+coverage

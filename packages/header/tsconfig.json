@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "types": ["jest", "node", "react", "testing-library__jest-dom"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "typings/**/*.d.ts"]
+}
